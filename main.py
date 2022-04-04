@@ -63,7 +63,7 @@ def update_employee(data: EmployeeUpdate):
     emp_dict = {k: v for k, v in data.dict().items() if v is not None}
     result = col.update_one({"id": data.id}, {"$set": emp_dict})
     if result.modified_count == 1:
-        return {"message": f"Employee {data.name} updated."}
+        return {"message": f"Employee updated."}
     return {"message": f"error occured while updating employee {data.name}"}
 
 
